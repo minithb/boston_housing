@@ -12027,7 +12027,7 @@ Pupil-Teacher Ratio 'PTRATIO' indicates quality of education in schools in neigh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -13797,8 +13797,8 @@ When the model is trained with a maximum depth of 1, the model suffers from high
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-I think Maximum Depth = 4 results in a model that best generalizes to unseen data.
-As we must increase the complexity of model as long as both our training score and testing score are increasing. So, as we do this we will reach to point after which if we increase the complexity of model, our training score will increase but our testing score will decrease or will remain same as it was before. So, why to increase the complexity of model if we don't see increase in our testing score. And from the graph it is evident that as we increase the complexity(maximum depth) of our model, our training score and testing score increases till we reach the point where Maximum Depth = 4. If we increase the complexity above this, the training score increases but testing score remains same at Maximum Depth=5. And, testing score decreases even more as we increase the complexity.</p>
+I think Maximum Depth = 5 results in a model that best generalizes to unseen data.
+As we must increase the complexity of model as long as both our training score and testing score are increasing. So, as we do this we will reach to point after which if we increase the complexity of model, our training score will increase but our testing score will decrease or will remain same as it was before. So, why to increase the complexity of model if we don't see increase in our testing score. And from the graph it is evident that as we increase the complexity(maximum depth) of our model, our training score and testing score increases till we reach the point where Maximum Depth = 5. If we increase the complexity above this, the training score increases but testing score decreases.</p>
 
 </div>
 </div>
@@ -13891,7 +13891,7 @@ For example, A dataset have 60 data points. Datapoints 1-40 have target variable
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13916,7 +13916,7 @@ For example, A dataset have 60 data points. Datapoints 1-40 have target variable
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create the grid search object</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">scoring_fnc</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_fnc</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># Fit the grid search object to the data to compute the optimal model</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -13953,7 +13953,7 @@ For example, A dataset have 60 data points. Datapoints 1-40 have target variable
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -13973,7 +13973,7 @@ For example, A dataset have 60 data points. Datapoints 1-40 have target variable
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameter &#39;max_depth&#39; is 4 for the optimal model.
+<pre>Parameter &#39;max_depth&#39; is 5 for the optimal model.
 </pre>
 </div>
 </div>
@@ -13988,7 +13988,7 @@ For example, A dataset have 60 data points. Datapoints 1-40 have target variable
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The Optimal Model have Maximum Depth=4.
+The Optimal Model have Maximum Depth=5.
 The result is same as my guess in Question 6.</p>
 
 </div>
@@ -14038,11 +14038,11 @@ The result is same as my guess in Question 6.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
-<span class="n">client_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="c1"># Client 1</span>
+<span class="n">client_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="c1"># Client 1</span>
                <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="c1"># Client 2</span>
                <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>  <span class="c1"># Client 3</span>
 
@@ -14061,9 +14061,9 @@ The result is same as my guess in Question 6.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predicted selling price for Client 1&#39;s home: $465,500.00
-Predicted selling price for Client 2&#39;s home: $230,828.57
-Predicted selling price for Client 3&#39;s home: $937,230.00
+<pre>Predicted selling price for Client 1&#39;s home: $419,700.00
+Predicted selling price for Client 2&#39;s home: $287,100.00
+Predicted selling price for Client 3&#39;s home: $927,500.00
 </pre>
 </div>
 </div>
@@ -14158,8 +14158,8 @@ Range in prices: $37,132.67
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-No, The constructed model should not be used in real-world setting. As the value of features 'LSTAT' and 'PTRATIO' would change a lot over 35 years because there might have been new schools opened or people might have shifted etc. So, just by multiplicatively scaling value of 'MEDV' to account for 35 years of inflation doesn't make it usable to current world setting. Thus, the data doesn't seems to be relevant today.</p>
-<p>Yes, the features present in the data are the most the vital one to get a fair idea about price of house. Though, not enough to decribe a home. Features like distance of recreational places from home, distance of hospital, house age etc. could be added to predict the price more accurately.</p>
+No, The constructed model should not be used in real-world setting. As the value of features 'LSTAT' and 'PTRATIO' would change a lot over 35 years because there might have been new schools opened or people might have shifted etc. So, just by multiplicatively scaling value of 'MEDV' to account for 35 years of market inflation doesn't make it usable to current world setting. Thus, the data doesn't seems to be relevant today.</p>
+<p>Yes, the features present in the data are the most vital one to get a fair idea about price of house. Though, not enough to decribe a home. Features like distance of recreational places from home, distance of hospital, house age etc. could be added to predict the price more accurately.</p>
 <p>Yes, the model is robust to make consistent predictions.</p>
 <p>No, the data collected in an urban city cannot be applicable in an rural city as house price in rural city depends mostly on area of house and not on other features like 'LSTAT' and 'PTRATIO'.</p>
 
